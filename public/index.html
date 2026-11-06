@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chùa Tịnh Tâm - Multiplayer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="game"></div>
+  <div id="hud" class="hidden">
+    <div class="topbar">
+      <div class="brand">☸ CHÙA TỊNH TÂM</div>
+      <div id="online">Đang kết nối...</div>
+      <div class="controls">WASD / phím mũi tên: di chuyển · Enter: chat</div>
+    </div>
+    <div class="hint">Hãy đi dạo, ngắm hồ sen và gặp gỡ mọi người.</div>
+    <section id="chat" class="chat">
+      <div id="messages" class="messages"><div class="system">Chào mừng bạn đến với Chùa Tịnh Tâm.</div></div>
+      <form id="chatForm"><input id="chatInput" maxlength="180" placeholder="Nhập tin nhắn..." autocomplete="off"><button>Gửi</button></form>
+    </section>
+  </div>
+
+  <div id="joinScreen" class="overlay">
+    <div class="panel">
+      <div class="lotus">❀</div>
+      <h1>Chùa Tịnh Tâm</h1>
+      <p>Không gian 3D thư giãn · Tối đa 20 người chơi</p>
+      <label for="playerName">Tên nhân vật</label>
+      <input id="playerName" maxlength="18" value="Khách" placeholder="Nhập tên của bạn">
+      <button id="joinButton">Vào chùa</button>
+      <div id="joinError" class="error"></div>
+      <small>Di chuyển bằng WASD hoặc phím mũi tên. Nhấn Enter để trò chuyện.</small>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/game.js"></script>
+</body>
+</html>
